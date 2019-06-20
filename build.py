@@ -1,8 +1,8 @@
-top = open("templates/top.html").read
-bottom = open("templates/bottom.html").read
-index_html = open("templates/index.html").read
-resume_html = open("templates/resume.html").read
-about_html = open("templates/about.html").read
+top = open("templates/top.html").read()
+bottom = open("templates/bottom.html").read()
+index_html = open("content/index.html").read()
+resume_html = open("content/resume.html").read()
+about_html = open("content/about.html").read()
 
 index = top + index_html + bottom
 resume = top + resume_html + bottom
