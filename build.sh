@@ -1,4 +1,4 @@
-cat templates/top.html templates/index.html templates/bottom.html > docs/index.html
-cat templates/top.html templates/resume.html templates/bottom.html > docs/resume.html
-cat templates/top.html templates/about.html templates/bottom.html > docs/about.html
+cat "/Users/hellomickle/Documents/Kickstart Coding/Homework/hw2-scripting/templates/top.html" "/Users/hellomickle/Documents/Kickstart Coding/Homework/hw2-scripting/content/index.html" "/Users/hellomickle/Documents/Kickstart Coding/Homework/hw2-scripting/templates/bottom.html" > docs/index.html
+cat "/Users/hellomickle/Documents/Kickstart Coding/Homework/hw2-scripting/templates/top.html" "/Users/hellomickle/Documents/Kickstart Coding/Homework/hw2-scripting/content/resume.html" "/Users/hellomickle/Documents/Kickstart Coding/Homework/hw2-scripting/templates/bottom.html" > docs/resume.html
+cat "/Users/hellomickle/Documents/Kickstart Coding/Homework/hw2-scripting/templates/top.html" "/Users/hellomickle/Documents/Kickstart Coding/Homework/hw2-scripting/content/about.html" "/Users/hellomickle/Documents/Kickstart Coding/Homework/hw2-scripting/templates/bottom.html" > docs/about.html
 
