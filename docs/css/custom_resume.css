@@ -9,6 +9,7 @@ body {
 	padding-top:54px;
   	color: black;
   	background: url(../img/rose_dust.jpg) #F2AFD3;
+  	background-repeat: repeat;
   }
 
 #page-top-about {
@@ -199,6 +200,8 @@ a {
 
 a:active,a:focus,a:hover {
 	color:#F8CCCF
+
+
 }
 
 
