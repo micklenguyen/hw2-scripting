@@ -1,14 +1,53 @@
-top = open("templates/top.html").read()
-bottom = open("templates/bottom.html").read()
-index_html = open("content/index.html").read()
-resume_html = open("content/resume.html").read()
-about_html = open("content/about.html").read()
+def main(filename, output):
 
-index = top + index_html + bottom
-resume = top + resume_html + bottom
-about = top + about_html + bottom
+	# Read content of html pages
+	content = open(filename).read()
+
+	# Invoke function to return finished_page (base.html with filled in content)
+	finshed_page = apply_template(content)
+	write(output, finshed_page)
 
 
-open("docs/index.html", "w+").write(index)
-open("docs/resume.html", "w+").write(resume)
-open("docs/about.html", "w+").write(about)
+def apply_template(content):
+
+	# Read base.html and save to template
+	template = open("templates/base.html").read()
+
+	# Replaces string tag with content from html files
+	finshed_page = template.replace("{{content}}", content)
+	return finshed_page
+
+
+def write(output, finshed_page):
+
+	# Writes complete html files
+	open(output, "w+").write(finshed_page)
+
+
+# Content pages list
+pages = [
+	{
+	"filename": "content/index.html",
+	"output": "docs/index.html",
+	"title": "index",
+	},
+	{
+	"filename": "content/resume.html",
+	"output": "docs/resume.html",
+	"title": "resume",
+	},
+	{
+	"filename": "content/about.html",
+	"output": "docs/about.html",
+	"title": "about",
+	},
+]
+
+
+if __name__ == "__main__":
+	for page in pages:
+		filename = page['filename']
+		output = page['output']
+		title = page['title']
+
+	main(filename, output)
