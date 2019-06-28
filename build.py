@@ -14,6 +14,22 @@ def apply_template(content, title):
 	template = open("templates/base.html").read()
 
 	template = template.replace("{{title}}", title)
+
+	active = '>> '
+	blank = ""
+	if title == 'Bio':
+		template = template.replace("{{active_bio}}", active)
+		template = template.replace("{{active_resume}}", blank)
+		template = template.replace("{{active_about}}", blank)
+	elif title == 'Resume':
+		template = template.replace("{{active_resume}}", active)
+		template = template.replace("{{active_bio}}", blank)
+		template = template.replace("{{active_about}}", blank)
+	else:
+		template = template.replace("{{active_about}}", active)
+		template = template.replace("{{active_bio}}", blank)
+		template = template.replace("{{active_resume}}", blank)
+
 	# Replaces string tag with content from html files
 	finshed_page = template.replace("{{content}}", content)
 	return finshed_page
