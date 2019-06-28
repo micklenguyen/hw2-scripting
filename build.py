@@ -5,7 +5,7 @@ def main(filename, output):
 
 	# Invoke function to return finished_page (base.html with filled in content)
 	finshed_page = apply_template(content)
-	write(output, finshed_page)
+	write_html(output, finshed_page)
 
 
 def apply_template(content):
@@ -18,7 +18,7 @@ def apply_template(content):
 	return finshed_page
 
 
-def write(output, finshed_page):
+def write_html(output, finshed_page):
 
 	# Writes complete html files
 	open(output, "w+").write(finshed_page)
@@ -50,4 +50,4 @@ if __name__ == "__main__":
 		output = page['output']
 		title = page['title']
 
-	main(filename, output)
+		main(filename, output)
