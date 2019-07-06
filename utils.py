@@ -15,6 +15,7 @@ def main():
 		write_html(output, finshed_page)
 
 
+
 def auto_populate_content_files():
 
 	import glob
@@ -41,6 +42,9 @@ def auto_populate_content_files():
 		# Split the name from the file extention (ex. resume.html -> resume)
 		name_only, extension = os.path.splitext(file_name)
 
+		if name_only == 'index':
+			name_only = 'bio'
+
 		# Build a list with dicts of content information
 		pages.append({
 			"filepath": file_path,
@@ -50,6 +54,8 @@ def auto_populate_content_files():
 			})
 
 	return pages
+
+
 
 def apply_template(content, title, pages):
 
@@ -67,10 +73,32 @@ def apply_template(content, title, pages):
 	return finished_page
 
 
+
 def write_html(output, finshed_page):
 
 	# Writes complete html files
 	open(output, "w+").write(finshed_page)
+
+
+def write_html(output, finshed_page):
+
+	# Writes complete html files
+	open(output, "w+").write(finshed_page)
+
+
+def new_file_creation():
+	new_page_title = input("Please enter new page name: ")
+	open('content/' + new_page_title + '.html', 'w+').write("""
+	<hr class="m-0">
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="interests">
+      <div class="w-100">
+        <h2 class="mb-5">""" + new_page_title + """</h2>
+        <p>Test Content</p>
+      </div>
+
+    </section>
+
+  	</div>""")
 
 
 if __name__ == "__main__":
